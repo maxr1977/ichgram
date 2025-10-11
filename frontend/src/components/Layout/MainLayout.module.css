@@ -1,0 +1,276 @@
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 244px minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  background-color: var(--color-background);
+}
+
+.sidebarDesktop {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  padding: 32px 20px;
+  border-right: 1px solid var(--color-border);
+  background-color: var(--color-white);
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 60;
+}
+
+.logo {
+  margin-bottom: 32px;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch; 
+}
+
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  text-align: left; 
+}
+
+.navItem:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.navItemActive {
+  font-weight: 600;
+}
+
+.navIcon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.profileAvatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.profileNavItem {
+  margin-top: 24px;
+}
+
+.sidebarMobile {
+  display: none;
+}
+
+.mobileNavItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 0;
+  color: var(--color-text-primary);
+}
+
+.mobileNavItemActive {
+  color: var(--color-text-primary);
+}
+
+.mobileIcon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.mobileAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.mainArea {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  min-height: 100%;
+  background-color: var(--color-background);
+}
+
+.footer {
+  grid-column: 2;
+  grid-row: 2;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  background-color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 18px 24px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.footerItem {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.footerItem:hover {
+  color: var(--color-text-primary);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 244px;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.overlay[data-open="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 244px;
+  width: min(420px, 90vw);
+  background-color: var(--color-white);
+  border-right: 1px solid var(--color-border);
+  z-index: 60;
+  box-shadow: 4px 0 24px rgba(15, 23, 42, 0.08);
+  padding: 32px 24px;
+  overflow-y: auto;
+}
+
+.panelHeader {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1200px) {
+  .layout {
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
+
+  .panel,
+  .overlay {
+    left: 200px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 88px minmax(0, 1fr);
+  }
+
+  .overlay {
+    left: 88px;
+  }
+
+  .navItem {
+    position: relative;
+    justify-content: center;
+    padding: 12px;
+  }
+
+  .navItem span {
+    display: none;
+  }
+
+  .panel {
+    left: 88px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr) 62px;
+  }
+
+  .overlay {
+    left: 0;
+    bottom: 62px;
+  }
+
+  .sidebarDesktop {
+    display: none;
+  }
+
+  .sidebarMobile {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    align-items: center;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    background-color: var(--color-white);
+    width: 100%;
+    gap: 4px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 16px;
+    z-index: 70;
+  }
+
+  .mainArea {
+    grid-column: 1;
+    grid-row: 1;
+    padding-bottom: 80px;
+  }
+
+  .footer {
+    display: none;
+  }
+
+  .panel {
+    left: 0;
+    width: 100%;
+  }
+}
+
+.navBadge {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #f43f5e;
+  pointer-events: none;
+}
+
+.mobileNavItem {
+  position: relative;
+}
+
+.mobileBadge {
+  position: absolute;
+  top: 6px;
+  right: 18px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #f43f5e;
+  pointer-events: none;
+}

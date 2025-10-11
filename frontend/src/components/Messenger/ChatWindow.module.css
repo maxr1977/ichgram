@@ -1,0 +1,92 @@
+.chatWindow {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chatHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--color-border);
+  font-weight: 600;
+}
+
+.headerInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.messageArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.profileSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.profileName {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.profileFullName {
+    color: var(--color-text-secondary);
+}
+
+.noChatSelected, .centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #8e8e8e;
+  font-size: 20px;
+  text-align: center;
+}
+
+.clickableAvatar {
+    cursor: pointer;
+    position: relative;
+}
+
+.clickableAvatar::after {
+    content: 'Change';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.clickableAvatar:hover::after {
+    opacity: 1;
+}
+
+.profileMetaButton {
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    font-size: inherit;
+    padding: 0;
+}
+
+.profileMetaButton:hover {
+    text-decoration: underline;
+}

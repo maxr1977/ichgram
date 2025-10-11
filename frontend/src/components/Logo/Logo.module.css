@@ -1,0 +1,28 @@
+.logo {
+  display: inline-flex;
+}
+
+.logo picture,
+.logo img {
+  display: block;
+  height: auto;
+}
+
+.sm img {
+  width: 120px;
+}
+
+.md img {
+  width: 160px;
+}
+
+.lg img {
+  width: 200px;
+}
+
+@media (max-width: 1024px) {
+  .responsive.md img {
+    width: 48px;
+    height: 48px;
+  }
+}

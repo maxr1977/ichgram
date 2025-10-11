@@ -1,0 +1,150 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 8px 40px 8px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.card[data-recommended='true'] {
+  background: var(--color-white);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.authorBlock {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.authorMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.username {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.separator {
+  color: var(--color-text-tertiary, var(--color-text-secondary));
+}
+
+.timestamp {
+  white-space: nowrap;
+}
+
+.followButton {
+  border: none;
+  background: transparent;
+  color: var(--color-button-primary);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.followButton:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.actionButton {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 24px;
+  color: var(--color-text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionButton:focus-visible {
+  outline: 2px solid var(--color-button-primary);
+  outline-offset: 2px;
+}
+
+.liked {
+  color: #ef4444;
+}
+
+.likes {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.caption,
+.comment {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+}
+
+.captionAuthor,
+.commentAuthor {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.captionText,
+.commentText {
+  color: var(--color-text-primary);
+}
+
+.moreButton {
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+
+.moreButton:hover {
+  color: var(--color-text-primary);
+}
+
+.viewAllButton {
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+.viewAllButton:hover {
+  color: var(--color-text-primary);
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding-bottom: 32px;
+  }
+}
+
+.username:hover,
+.captionAuthor:hover,
+.commentAuthor:hover {
+  color: var(--color-button-primary);
+}

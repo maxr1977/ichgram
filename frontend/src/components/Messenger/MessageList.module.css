@@ -1,0 +1,62 @@
+.messageList {
+  flex-grow: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dateSeparator {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 12px;
+    margin: 16px 0;
+}
+
+.messageWrapper {
+  display: flex;
+  gap: 8px;
+  max-width: 70%;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+}
+
+.bubble {
+  padding: 8px 12px;
+  border-radius: 18px;
+  word-wrap: break-word;
+}
+
+.timestamp {
+    font-size: 10px;
+    color: var(--color-text-secondary);
+    margin-top: 4px;
+}
+
+.sent {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.sent .bubble {
+  background-color: #3897f0;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.sent .timestamp {
+    text-align: right;
+}
+
+.received {
+  align-self: flex-start;
+}
+
+.received .bubble {
+  background-color: #efefef;
+  border-bottom-left-radius: 4px;
+}

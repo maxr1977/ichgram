@@ -1,0 +1,12 @@
+.footerLinks {
+  display: inline-flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 12px;
+  margin-top: 24px;
+}
+
+.footerLinks li {
+  display: inline-flex;
+}

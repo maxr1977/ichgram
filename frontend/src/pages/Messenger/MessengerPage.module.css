@@ -1,0 +1,26 @@
+.messenger {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  height: calc(100vh - 88px); 
+  border: 1px solid var(--color-border); 
+  margin: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--color-border);
+    background-color: #FAFAFA;
+}
+
+.newGroupButton {
+    margin: 16px;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}

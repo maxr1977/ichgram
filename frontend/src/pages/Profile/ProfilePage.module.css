@@ -1,0 +1,138 @@
+.page {
+  width: 100%;
+  padding: 24px 32px 48px;
+  box-sizing: border-box;
+}
+
+.content {
+  max-width: 935px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  text-align: center;
+}
+
+.error {
+  color: var(--color-error);
+  font-weight: 600;
+}
+
+.empty {
+  color: var(--color-text-secondary);
+}
+
+.postsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.loadMoreWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.loadMoreButton {
+  border: none;
+  background: var(--color-button-secondary);
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.loadMoreButton:hover,
+.loadMoreButton:focus-visible {
+  background: var(--color-button-secondary-hover, #e5e7eb);
+}
+
+.loadMoreButton.loading {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  width: 100%;
+}
+
+.postTile {
+  position: relative;
+  border: none;
+  padding: 0;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  background: #000;
+}
+
+.postTile:focus-visible {
+  outline: 2px solid var(--color-link);
+  outline-offset: 2px;
+}
+
+.postTile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.postOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  font-weight: 600;
+}
+
+.postOverlay span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+}
+
+.postTile:hover .postOverlay,
+.postTile:focus-visible .postOverlay {
+  opacity: 1;
+}
+
+@media (max-width: 960px) {
+  .page {
+    padding: 16px 20px 32px;
+  }
+
+  .postsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 12px 16px 28px;
+  }
+
+  .postsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

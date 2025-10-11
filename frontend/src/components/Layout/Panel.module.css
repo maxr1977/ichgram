@@ -1,0 +1,251 @@
+.panelContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.panelTitle {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.searchField {
+  position: relative;
+  display: flex;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 40px 10px 36px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-input-background);
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--color-button-primary);
+  background-color: var(--color-white);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  font-size: 18px;
+}
+
+.clearButton {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clearButton:hover,
+.clearButton:focus-visible {
+  color: var(--color-text-primary);
+}
+
+.panelSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.placeholder {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.historyList,
+.resultsList,
+.notificationsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.historyItem,
+.resultItem,
+.notificationItem {
+  width: 100%;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s ease;
+}
+
+.historyItem:hover,
+.historyItem:focus-visible,
+.resultItem:hover,
+.resultItem:focus-visible,
+.notificationItem:hover,
+.notificationItem:focus-visible {
+  background-color: rgba(15, 23, 42, 0.05);
+}
+
+.historyItem span {
+  flex: 1;
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+
+.historyRemove {
+  font-size: 14px;
+  color: var(--color-text-tertiary, var(--color-text-secondary));
+}
+
+.resultMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.resultUsername {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+
+.resultFullName {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.errorMessage {
+  color: var(--color-error);
+  font-size: 14px;
+}
+
+.notificationsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.notificationInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.notificationMessage {
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+
+.notificationMeta {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.notificationPreview {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--color-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.notificationPreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.notificationPreview:focus-visible {
+  outline: 2px solid var(--color-button-primary);
+  outline-offset: 2px;
+}
+
+.notificationNew {
+  position: relative;
+}
+
+.notificationNew::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-button-primary);
+}
+
+.panelActions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.panelActions button {
+  border: none;
+  background: var(--color-button-secondary);
+  color: var(--color-text-primary);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.panelActions button:hover,
+.panelActions button:focus-visible {
+  background: var(--color-button-secondary-hover, #e5e7eb);
+}
+
+.resultUsername:hover,
+.resultUsername:focus-visible {
+  text-decoration: underline;
+}
+
+
+.previewPlaceholder {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+
+.historyRemove:hover,
+.historyRemove:focus-visible {
+  color: var(--color-text-primary);
+}
+

@@ -1,0 +1,27 @@
+.illustration,
+.illustrationHidden {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: min(420px, 40vw);
+  height: auto;
+}
+
+.illustrationHidden {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .illustrationHidden {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .image {
+    width: min(320px, 80vw);
+  }
+}

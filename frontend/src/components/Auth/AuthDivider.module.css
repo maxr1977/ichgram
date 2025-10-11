@@ -1,0 +1,19 @@
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.label {
+  font-weight: 600;
+}
